@@ -1,0 +1,29 @@
+.slide-card {
+  display: grid;
+  grid-template-areas:
+    "header"
+    "image"
+    "content"
+    "footer";
+  grid-template-rows: auto;
+  grid-template-columns: auto;
+  img {
+    max-width: 100%
+  }
+  &-buttons {
+    grid-area: footer;
+    align-self: end;
+    justify-self: center;
+  }
+  &-content {
+    margin: 10px 0;
+  }
+  h5 {
+    margin: auto;
+    margin-bottom: 15px;
+  }
+}
+
+h2 {
+  margin-bottom: 15px;
+}

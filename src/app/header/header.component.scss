@@ -1,0 +1,36 @@
+@import '../../styles.scss';
+
+.navbar {
+  background-color: $primary-blue;
+
+  .navbar-brand {
+    img {
+      max-height: 50px;
+    }
+  }
+
+  #navbarSupportedContent {
+    justify-content: end;
+  }
+
+  ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    display: flex;
+  }
+
+  a {
+    text-decoration: none;
+    color: #ffffff;
+    &.nav-link.active {
+      color: $secondary-grey;
+    }
+  }
+
+  .spacer {
+    flex: 1 1 auto;
+  }
+}
+
+

@@ -1,0 +1,39 @@
+<div class="container">
+  <h2>OnTheHalfTurn Admin</h2>
+  <h4>Slides</h4>
+  <div class="row">
+    <div class="col-md-10">
+      <h5>Current Slides</h5>
+      <div class="row">
+        <mat-card *ngFor="let slide of slides" class="col-md-4 col-sm-6 slide-card">
+          <h5>{{ slide.title }}</h5>
+          <img [src]="slide.imagePath" [alt]="slide.title">
+          <div class="slide-card-content">{{ slide.content }}</div>
+          <div class="slide-card-buttons"><a mat-button [routerLink]="['/admin/createSlide', slide.id]" color="primary">Edit</a> <a mat-button color="warn" (click)="onDelete('slide', slide.id)">Delete</a></div>
+        </mat-card>
+      </div>
+    </div>
+    <div class="col-md-2">
+      <a mat-button routerLink="/admin/createSlide">Create New Slide</a>
+    </div>
+  </div>
+</div>
+<div class="container">
+  <h4>Posts</h4>
+  <div class="row">
+    <div class="col-md-10">
+      <h5>Current Posts</h5>
+      <div class="row">
+        <mat-card *ngFor="let post of posts" class="col-md-4 col-sm-6 slide-card">
+          <h5>{{ post.title }}</h5>
+          <img [src]="post.imagePath" [alt]="post.title">
+          <div class="slide-card-content">{{ (post.content.length > 200) ? (post.content | slice:0:200) + '...' : (post.content) }}</div>
+          <div class="slide-card-buttons"><a mat-button [routerLink]="['/admin/createPost', post.id]" color="primary">Edit</a> <a mat-button color="warn" (click)="onDelete('post', post.id)">Delete</a></div>
+        </mat-card>
+      </div>
+    </div>
+    <div class="col-md-2">
+      <a mat-button routerLink="/admin/createPost">Create New Post</a>
+    </div>
+  </div>
+</div>

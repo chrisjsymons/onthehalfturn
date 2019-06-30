@@ -1,0 +1,16 @@
+<div class="container">
+    <mat-spinner *ngIf="isLoading"></mat-spinner>
+    <div class="row">
+      <a routerLink="/blog"><< Back to blog posts</a>
+    </div>
+    <div class="row" *ngIf="!isLoading">
+      <div class="col-sm-12 blog-title">
+        <h1>{{ post.title }}</h1>
+      </div>
+      <div class="col-sm-12 blog-image">
+        <img [src]="post.imagePath" [alt]="post.title">
+      </div>
+      <div class="col-sm-12" [innerHTML]="post.content">
+      </div>
+    </div>
+  </div>
